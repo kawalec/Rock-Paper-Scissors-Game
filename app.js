@@ -1,46 +1,50 @@
+let userScore = 0;
+let compScore = 0;
+
 let compChoice = () => {
   const choice = ["rock", "paper", "scissors"];
   const random = Math.floor(Math.random() * 3);
   return choice[random];
 };
 
-const choices = document.querySelector("#choices");
-
-choices.addEventListener(
+document.querySelector("#choices").addEventListener(
   "click",
   function(el) {
-    let score = el.target.id + compChoice();
-    setScore(score);
+    let comp = compChoice();
+    setScore(el.target.id, comp);
+    setTimeout(() => {
+      document.querySelector(
+        "#result"
+      ).innerHTML = `Make you move. Choice one:`;
+    }, 3000);
   },
   false
 );
 
-let userScore = 0;
-let compScore = 0;
-
-let setScore = score => {
-  switch (score) {
+let setScore = (user, comp) => {
+  switch (user + comp) {
     case "rockscissors":
     case "paperrock":
     case "scissorspaper":
-      console.log(score);
       userScore += 1;
       document.querySelector("#user-score").innerHTML = userScore;
-      console.log(userScore);
-      console.log("user +");
+      document.querySelector(
+        "#result"
+      ).innerHTML = `Your choices ${user}, computer choices ${comp}. You win!`;
       break;
     case "rockpaper":
     case "paperscissors":
     case "scissorsrock":
-      console.log(score);
       compScore += 1;
       document.querySelector("#comp-score").innerHTML = compScore;
-      console.log(compScore);
-      console.log("comp +");
+      document.querySelector(
+        "#result"
+      ).innerHTML = `Your choices ${user}, computer choices ${comp}. You lose!`;
       break;
     default:
-      console.log(score);
-      console.log("remis");
+      document.querySelector(
+        "#result"
+      ).innerHTML = `Your choices ${user}, computer choices ${comp}.`;
       break;
   }
 };
