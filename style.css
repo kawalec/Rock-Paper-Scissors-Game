@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#game-board {
+  width: 600px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#score-board {
+  width: 100px;
+  height: 50px;
+  border: 3px solid #000;
+  border-radius: 10px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  display: flex;
+  font-size: 3em;
+}
+
+#score-board div {
+  flex-grow: 1;
+  text-align: center;
+}
+
+#choices {
+  display: flex;
+}
+
+#result {
+  width: 100%;
+  height: 20px;
+  margin: 40px 0;
+  text-align: center;
+  font-size: 2em;
+}
+
+#choices div {
+  width: 190px;
+  height: 190px;
+  cursor: pointer;
+}
+
+#choices div:nth-child(1) {
+  background: url(./img/icons.png) 0 0;
+}
+
+#choices div:nth-child(2) {
+  background: url(./img/icons.png) 400px 0;
+}
+
+#choices div:nth-child(3) {
+  background: url(./img/icons.png) 190px 0;
+}
