@@ -17,8 +17,6 @@
   height: 50px;
   border: 3px solid #000;
   border-radius: 10px;
-  /* margin-left: auto;
-  margin-right: auto; */
   display: flex;
   font-size: 3em;
 }
@@ -26,10 +24,6 @@
 #score-board div {
   flex-grow: 1;
   text-align: center;
-}
-
-#choices {
-  display: flex;
 }
 
 #result {
@@ -40,10 +34,21 @@
   font-size: 2em;
 }
 
+#choices {
+  display: flex;
+}
+
 #choices div {
   width: 190px;
   height: 190px;
   cursor: pointer;
+  filter: grayscale(30%);
+  transition: all 0.3s ease;
+}
+
+#choices div:hover {
+  transform: scale(0.9);
+  filter: grayscale(0);
 }
 
 #choices div:nth-child(1) {
